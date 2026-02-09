@@ -1,0 +1,719 @@
+/* src/App.css */
+
+/* App layout */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f3f4f6;
+}
+
+/* Main content area */
+.page-content {
+  padding: 1.5rem 2rem 2rem;
+}
+
+/* Generic page styling */
+.page-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.page-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.75rem;
+  background: #111827;
+  color: #f9fafb;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.4);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-logo {
+  font-weight: 700;
+  margin-right: 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.nav-link {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.35rem;
+  border-radius: 4px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(249, 250, 251, 0.08);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Profile chip + dropdown (top-right) */
+.profile-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: #1f2937;
+}
+
+.profile-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.profile-name {
+  font-size: 0.9rem;
+}
+
+/* Dropdown panel */
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  background: #ffffff;
+  color: #111827;
+  padding: 0.75rem 1rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.28);
+  min-width: 200px;
+  z-index: 10;
+}
+
+.profile-dropdown p {
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.profile-dropdown p:last-of-type {
+  margin-bottom: 0.5rem;
+}
+
+/* Logout button inside dropdown */
+.logout-btn {
+  margin-top: 0.3rem;
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.45rem;
+  border: none;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.logout-btn:hover {
+  background: #b91c1c;
+}
+
+.logout-btn:active {
+  transform: scale(0.98);
+}
+
+/* Login + Register layout */
+.forms-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Card for login/register and other forms */
+.card {
+  background: #ffffff;
+  padding: 1.5rem 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  min-width: 280px;
+  max-width: 360px;
+  box-sizing: border-box;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+/* Form inside card */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-control label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-control input {
+  padding: 0.55rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+  background-color: #f9fafb;
+}
+
+.form-control input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+  background-color: #ffffff;
+}
+
+/* Shared button styles */
+button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error / success messages */
+.error {
+  color: #b91c1c;
+  font-size: 0.8rem;
+}
+
+.success {
+  color: #15803d;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Simple styling for Data and Create Data pages */
+.data-list {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.data-list h3 {
+  margin-bottom: 0.75rem;
+}
+
+.data-list ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+}
+
+.data-list li {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 0.3rem;
+}
+
+/* Create Data form container (optional if you add a form there) */
+.create-data-container {
+  max-width: 480px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* ======================= */
+/* Home page styling       */
+/* ======================= */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Hero section */
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+
+.home-hero-content {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.07),
+    rgba(16, 185, 129, 0.05)
+  );
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.home-hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.home-hero-content p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #374151;
+  max-width: 600px;
+}
+
+.home-cta-buttons {
+  margin-top: 1.3rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* CTA buttons that are Links */
+.home-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.05s ease;
+}
+
+.home-cta.primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.home-cta.primary:hover {
+  background: #1d4ed8;
+}
+
+.home-cta.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.home-cta.secondary:hover {
+  background: #d1d5db;
+}
+
+/* Right side highlight box */
+.home-hero-highlight {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.home-hero-highlight h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+  color: #111827;
+}
+
+.home-hero-highlight ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.home-hero-highlight li {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 0.35rem;
+}
+
+/* Sections under hero */
+.home-section {
+  margin-top: 0.5rem;
+}
+
+.home-section-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+/* Features grid */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.2rem;
+}
+
+.home-card {
+  background: #ffffff;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+.home-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.home-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Steps section */
+.home-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.home-step {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+  position: relative;
+  padding-top: 1.75rem;
+}
+
+.home-step-number {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.9rem;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-step h4 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  color: #111827;
+  margin-left: 1.4rem;
+}
+
+.home-step p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-left: 1.4rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+/* ======================= */
+/* About page styling      */
+/* ======================= */
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Top description section */
+.about-header {
+  background: #ffffff;
+  padding: 1.5rem 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.about-header h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.about-header p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* Team section */
+.about-team-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-team-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+  color: #111827;
+}
+
+/* Team cards grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.team-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+/* Circle avatar with initial */
+.team-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.team-content h4 {
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.team-role {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.35rem;
+}
+
+.team-focus {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 0.4rem;
+}
+
+.team-email {
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.team-email span {
+  font-weight: 600;
+}
+
+/* Bottom summary block */
+.about-summary {
+  background: #ffffff;
+  padding: 1.4rem 1.6rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.about-summary h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: #111827;
+}
+
+.about-summary p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 0.4rem;
+}
+
+
+
+/* =============================== */
+/* Create Data & Data page styles  */
+/* =============================== */
+
+/* Main container for Create Data page */
+.create-data-container {
+  max-width: 520px;
+  background: #ffffff;
+  padding: 1.6rem 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  margin: 0 auto;            /* center horizontally */
+}
+
+/* Small description under page title */
+.page-intro {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Ensure form spacing looks good */
+.create-data-container .form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* Form fields */
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-control label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Inputs and selects look the same */
+.form-control input,
+.form-control select {
+  padding: 0.55rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+  background-color: #f9fafb;
+}
+
+.form-control input:focus,
+.form-control select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+  background-color: #ffffff;
+}
+
+/* Shared button style (if not already defined) */
+button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Container for list of records on Data page */
+.data-list {
+  margin-top: 1rem;
+}
+
+/* Each record card (also reused elsewhere, which is fine) */
+.card {
+  background: #ffffff;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* Optional: style the delete button inside cards a bit tighter */
+.card button {
+  margin-top: 0; /* we don't want extra top margin inside card header */
+}
+
+/* Make Data page cards align nicely with page content */
+.page-content > .data-list {
+  max-width: 720px;
+  margin: 0 auto;            /* center the list block on the page */
+}
+
+/* Center login/register card on the page */
+.page-content > .card {
+  margin: 2rem auto 0;
+}
